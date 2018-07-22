@@ -3,9 +3,9 @@ const config = require('./global.config')
 const pages = require('./pages.config');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
-// exports.resolve = function (dir) {
-//     return path.join(__dirname, '..', dir);
-// }
+exports.resolve = function (dir) {
+    return path.join(__dirname, '..', dir);
+}
 
 exports.generatePages = function () {
     const htmlPages = pages.pages;
