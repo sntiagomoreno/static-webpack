@@ -1,0 +1,19 @@
+{{!-- Base Layout --}}
+<!doctype html>
+<html>
+	<head>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>{{ htmlWebpackPlugin.options.title }}</title>
+	</head>
+	<body>
+		<article id="wrapper">
+			<main class="container" {{#if namespace}} data-namespace={{namespace}} {{/if}}>
+				{{> header }}
+				{{#> body}}{{/body}}
+			</main>
+			{{#>footer}}
+				{{> footer }}
+			{{/footer}}
+		</article>
+	</body>
+</html>

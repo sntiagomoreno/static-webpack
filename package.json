@@ -1,0 +1,44 @@
+{
+    "name": "static-webpack",
+    "version": "1.0.0",
+    "main": "main.js",
+    "author": "Santiago Moreno",
+    "license": "ICS",
+    "scripts": {
+        "dev": "webpack-dev-server --hot --inline --config config/webpack.dev.js",
+        "build": "webpack --config config/webpack.prod.js",
+        "watch": "webpack --watch"
+    },
+    "devDependencies": {
+        "babel-core": "^6.26.3",
+        "babel-loader": "^7.1.4",
+        "browser-sync": "^2.24.6",
+        "browser-sync-webpack-plugin": "^2.2.2",
+        "clean-webpack-plugin": "^0.1.19",
+        "copy-webpack-plugin": "^4.5.2",
+        "css-loader": "^0.28.10",
+        "css-mqpacker": "^6.0.2",
+        "file-loader": "^1.1.11",
+        "handlebars": "^4.0.11",
+        "handlebars-loader": "^1.7.0",
+        "html-loader": "^0.5.5",
+        "html-webpack-plugin": "^3.0.6",
+        "mini-css-extract-plugin": "^0.4.0",
+        "node-sass": "^4.7.2",
+        "postcss-easing-gradients": "^1.2.3",
+        "postcss-loader": "^2.1.1",
+        "postcss-pxtorem": "^4.0.1",
+        "pug": "^2.0.3",
+        "pug-loader": "^2.4.0",
+        "sass-loader": "^6.0.7",
+        "style-loader": "^0.20.3",
+        "url-loader": "^1.0.1",
+        "webpack": "^4.1.1",
+        "webpack-cli": "^2.0.11",
+        "webpack-dev-server": "^3.1.1",
+        "webpack-module-hot-accept": "^1.0.5"
+    },
+    "dependencies": {
+        "normalize.css": "^8.0.0"
+    }
+}
