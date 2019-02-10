@@ -15,7 +15,7 @@ git clone https://github.com/sntiagomoreno/static-webpack.git static-site
 Get into your project folder:
 
 ```
-cd my-site
+cd static-site
 ```
 
 Remove this repo versioning files
