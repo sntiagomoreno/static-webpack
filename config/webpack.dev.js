@@ -1,8 +1,8 @@
 const webpack = require('webpack');
-const CopyWebpackPlugin = require('copy-webpack-plugin');
-const BrowserSyncPlugin = require('browser-sync-webpack-plugin');
 const utils = require('./utils');
 const config = require('./global.config');
+
+const CopyWebpackPlugin = require('copy-webpack-plugin');
 
 module.exports = {
     entry: config.entry,
@@ -32,7 +32,6 @@ module.exports = {
                 test: /\.jsx?$/,
                 include: [
                     config.dev.sourceDirectory, // + any other paths that need to be transpiled
-                    /\/node_modules\/smooth-scrolling/
                 ],
                 use: [{
                         loader: 'babel-loader',
@@ -69,12 +68,8 @@ module.exports = {
             },
             {
                 test: /\.scss$/,
-                use: [{
-                        loader: 'style-loader',
-                        options: {
-                            sourceMap: true
-                        }
-                    },
+                use: [
+                    'style-loader',
                     {
                         loader: 'css-loader',
                         options: {
@@ -97,7 +92,6 @@ module.exports = {
                     {
                         loader: 'sass-loader',
                         options: {
-                            outputStyle: 'expanded',
                             sourceMap: true
                         }
                     }
@@ -126,24 +120,11 @@ module.exports = {
         new webpack.NamedModulesPlugin(), // HMR shows correct file names in console on update.
 
         // copy custom static assets
-        new CopyWebpackPlugin([{
-            from: config.dev.staticAssets,
-            to: config.build.assetsSubDirectory,
-            ignore: ['.*']
-        }]),
-
-        new BrowserSyncPlugin(
-            // BrowserSync options
-            {
-                host: 'localhost',
-                port: 3000,
-                proxy: 'http://localhost:8080/',
-                open: false,
-            },
-            // Plugin options
-            {
-                reload: false
-            }
-        )
+        new CopyWebpackPlugin({
+            patterns: [{
+                from: config.dev.staticAssets,
+                to: config.build.assetsSubDirectory
+            }]
+        }),
     ])
 };

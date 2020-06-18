@@ -99,9 +99,6 @@ module.exports = {
                         options: {
                             plugins: loader => [
                                 require('autoprefixer'),
-                                require('css-mqpacker')({
-                                    sort: true
-                                }),
                                 require('postcss-pxtorem')({
                                     propList: ['*'],
                                     mediaQuery: true
