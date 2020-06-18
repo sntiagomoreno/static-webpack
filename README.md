@@ -53,11 +53,3 @@ yarn dev
 ```
 yarn build
 ```
-
-## Featured Dependencies
-
-Besides browser-sync and webpack-dev-server, this projects ships with some cool dependencies.
-
--   [postcss-loader](https://github.com/postcss/postcss-loader)
--   [css-mqpacker](https://github.com/hail2u/node-css-mqpacker) (postcss plugin)
--   [normalize.css](https://github.com/necolas/normalize.css/)
